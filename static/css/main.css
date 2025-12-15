@@ -1,5 +1,54 @@
 @import url("fontawesome-all.min.css");
-@import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500&display=swap");
+
+/* Banner with Text Overlay */
+.banner-hero {
+	position: relative;
+	overflow: hidden;
+}
+
+.banner-hero img {
+	width: 100%;
+	display: block;
+}
+
+.banner-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 2rem;
+}
+
+.banner-overlay h2 {
+	color: #fff;
+	font-size: 2.5rem;
+	margin-bottom: 0.5rem;
+	text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.banner-overlay p {
+	color: rgba(255,255,255,0.9);
+	font-size: 1.25rem;
+	margin: 0;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+@media screen and (max-width: 736px) {
+	.banner-overlay h2 {
+		font-size: 1.75rem;
+	}
+	.banner-overlay p {
+		font-size: 1rem;
+	}
+}
 
 /*
 	Read Only by HTML5 UP
@@ -98,11 +147,12 @@ input, select, textarea {
 		}
 
 	body, input, select, textarea {
-		color: #888;
-		font-family: "Lato", sans-serif;
+		color: #555;
+		font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 		font-size: 16pt;
 		font-weight: 400;
 		line-height: 1.75em;
+		letter-spacing: -0.01em;
 	}
 
 	a {
@@ -121,8 +171,8 @@ input, select, textarea {
 		}
 
 	strong, b {
-		color: #777;
-		font-weight: 700;
+		color: #333;
+		font-weight: 600;
 	}
 
 	em, i {
@@ -134,10 +184,11 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #777;
+		color: #222;
 		font-weight: 700;
-		line-height: 1em;
+		line-height: 1.2em;
 		margin: 0 0 0.5625em 0;
+		letter-spacing: -0.02em;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -2514,31 +2565,34 @@ input, select, textarea {
 		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
-		-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		background-color: #989898;
-		border-radius: 5px;
+		-moz-transition: all 0.25s ease;
+		-webkit-transition: all 0.25s ease;
+		-ms-transition: all 0.25s ease;
+		transition: all 0.25s ease;
+		background-color: #555;
+		border-radius: 8px;
 		border: 0;
 		color: #ffffff !important;
 		cursor: pointer;
 		display: inline-block;
-		font-weight: 700;
+		font-weight: 600;
 		height: 2.75em;
 		line-height: 2.75em;
-		padding: 0 1.5em;
+		padding: 0 1.75em;
 		text-align: center;
 		text-decoration: none;
 		white-space: nowrap;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 	}
 
 		input[type="submit"]:hover,
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		.button:hover {
-			background-color: #a5a5a5;
+			background-color: #333;
 			color: #ffffff !important;
+			transform: translateY(-2px);
+			box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 		}
 
 		input[type="submit"]:active,
@@ -2618,7 +2672,7 @@ input, select, textarea {
 		input[type="reset"].primary,
 		input[type="button"].primary,
 		.button.primary {
-			background-color: #4acaa8;
+			background: linear-gradient(135deg, #4acaa8 0%, #38b593 100%);
 			color: #ffffff !important;
 		}
 
@@ -2626,14 +2680,14 @@ input, select, textarea {
 			input[type="reset"].primary:hover,
 			input[type="button"].primary:hover,
 			.button.primary:hover {
-				background-color: #5ed0b1;
+				background: linear-gradient(135deg, #5ed0b1 0%, #4acaa8 100%);
 			}
 
 			input[type="submit"].primary:active,
 			input[type="reset"].primary:active,
 			input[type="button"].primary:active,
 			.button.primary:active {
-				background-color: #39c29d;
+				background: linear-gradient(135deg, #38b593 0%, #2ea385 100%);
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
